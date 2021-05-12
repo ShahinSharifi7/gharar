@@ -22,13 +22,17 @@ In[2]: my_gharar = Gharar(
     max_retry=3
 )
 
-In[3]: my_gharar.create_room(name="yazdan", is_private=True)
-Out[3]:
-{'name': 'yazdan',
- 'address': '6bedda4b-80ce-4f17-bec9-204709964161',
- 'is_private': True,
- 'has_live': False,
- 'live_address': None,
+In[3]: room = my_gharar.create_room(name="yazdan", is_private=True)
+In[4]: room.name()
+Out[4]: 'yazdan'
+In[5]: room.address()
+Out[5]: '6bedda4b-80ce-4f17-bec9-204709964161'
+In[6]: room.is_private()
+Out[6]: True
+In[7]: room.has_live()
+Out[7]: False
+In[8]: room.live_address()
+Out[8]: None
  'is_beta_enabled': False,
  'live_stream_url': None,
  'is_active': True,
@@ -36,7 +40,8 @@ Out[3]:
  'transcription_enabled': False,
  'auto_record': False,
  'incoming_call_enabled': False,
- 'call_pin': '74761137'}
+ 'call_pin': '74761137',
+ 'room_link': 'https://room.gharar.ir/6bedda4b-80ce-4f17-bec9-204709964161'}
 
 In[4]: my_gharar.create_room(name="sobhan", is_private=False)
 Out[4]:
@@ -52,7 +57,8 @@ Out[4]:
  'transcription_enabled': False,
  'auto_record': False,
  'incoming_call_enabled': False,
- 'call_pin': '56177610'}
+ 'call_pin': '56177610',
+ 'room_link': 'https://room.gharar.ir/6bedda4b-80ce-4f17-bec9-204709964161'}
 
 In[5]: my_gharar.get_rooms_list()
 Out[5]:
@@ -68,7 +74,8 @@ Out[5]:
   'transcription_enabled': False,
   'auto_record': False,
   'incoming_call_enabled': False,
-  'call_pin': '74761137'},
+  'call_pin': '74761137',
+  'room_link': 'https://room.gharar.ir/6bedda4b-80ce-4f17-bec9-204709964161'},
  {'name': 'sobhan',
   'address': '8f297726-fa6c-4246-a1de-8a96b3cf589d',
   'is_private': False,
@@ -81,7 +88,8 @@ Out[5]:
   'transcription_enabled': False,
   'auto_record': False,
   'incoming_call_enabled': False,
-  'call_pin': '56177610'}]
+  'call_pin': '56177610',
+  'room_link': 'https://room.gharar.ir/8f297726-fa6c-4246-a1de-8a96b3cf589d'}]
 
 In[6]: my_gharar.update_room(
     room_address="6bedda4b-80ce-4f17-bec9-204709964161",
